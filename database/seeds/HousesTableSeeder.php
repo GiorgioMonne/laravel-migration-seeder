@@ -14,14 +14,14 @@ class HousesTableSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for($i = 0 ; $i < 100; $i++){
+        for($i = 0 ; $i < 50; $i++){
             $house = new House();
 
         $house->nome = $faker->text(50);
         $house->locazione = $faker->streetAddress();
         $house->data_arrivo = $faker->dateTime();
         $house->data_partenza = $faker->dateTime();
-        $house->costo_permanenza = $faker->randomFloat(2, 100, 300000000);
+        $house->costo_permanenza = $faker->randomFloat(2, 10, 50000000);
 
         $house ->save();
         }
