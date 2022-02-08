@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CrateMoviesTable extends Migration
+class CrateHousesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CrateMoviesTable extends Migration
      */
     public function up()
     {
-        Schema::create('movies', function(Blueprint $table){
+        Schema::create('houses', function(Blueprint $table){
             $table->id();
             
-            $table->string("nome", 50);
+            $table->string("nome", 5000);
             $table->string("locazione", 50);
             $table->date("data_arrivo");
             $table->date("data_partenza");
-            $table->float("costo_permanenza", 5, 2);
+            $table->float("costo_permanenza", 11, 2);
 
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class CrateMoviesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movies');
+        //
     }
 }
